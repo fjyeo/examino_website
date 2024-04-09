@@ -1,0 +1,101 @@
+:root {
+    --background-color: #121212;
+    --text-color: #FFFFFF;
+    --accent-color: #00BFFF;
+    --secondary-color: #4CAF50;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: center;
+}
+
+header, section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #0A192F;
+    padding: 100px 20px;
+}
+
+.features, .how-it-works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.feature-item {
+    width: calc(33% - 20px);
+    background: #1C1C1E;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item, .contact {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.sign-up form {
+    margin-top: 20px;
+}
+
+.sign-up input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #2E4053; /* Border color */
+    background: #283848; /* Input background */
+    color: #ffffff; /* Text color */
+}
+
+.sign-up input[type="submit"] {
+    padding: 10px 20px;
+    width: 326px; /* Adjusting for input styling */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green button for submission */
+    color: #ffffff;
+}
+
+.contact {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+footer {
+    background-color: #0A192F;
+    color: #bbbbbb;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .features, .how-it-works {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        width: 100%;
+    }
+}
