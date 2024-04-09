@@ -1,0 +1,210 @@
+:root {
+    --background-color: #121212;
+    --text-color: #FFFFFF;
+    --accent-color: #00BFFF;
+    --secondary-color: #4CAF50;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.site-header {
+    background-color: #0A192F; /* Deep blue, adjust according to your color scheme */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust based on your logo's size for desktop view */
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px; /* Slightly smaller logo for mobile devices */
+    }
+}
+
+
+header, section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #0A192F;
+    padding: 100px 20px;
+}
+
+.features, .how-it-works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-item {
+    width: calc(33% - 20px);
+    background: #5c5c9b;
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.contact {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+footer {
+    background-color: #0A192F;
+    color: #bbbbbb;
+    padding: 20px 0;
+}
+
+.cta-button, .sign-up input[type="submit"] {
+    /* Existing styles */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cta-button:hover, .sign-up input[type="submit"]:hover {
+    background-color: #009FDF; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly scale up */
+}
+
+.navigation li a:hover, .contact a:hover {
+    color: #4CAF50; /* Change link color on hover */
+    text-decoration: underline; /* Add underline */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-item {
+    /* Existing styles */
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s; /* Adjust based on when you want the animation to start */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cta-button {
+    /* Existing styles */
+    animation: pulse 2s infinite;
+}
+
+.sign-up {
+    background: linear-gradient(145deg, #0A192F, #172A45);
+    color: #fff;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    margin: 2em auto;
+    max-width: 600px;
+}
+
+.sign-up h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.sign-up p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.sign-up form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sign-up input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 300px;
+}
+
+.sign-up input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sign-up input[type="submit"]:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+
+/* Improvements for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .features, .how-it-works {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        width: 100%;
+        margin: 0 auto; /* Ensure items are centered */
+    }
+
+    header, section {
+        padding: 50px;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    /* Ensure text is centered by adjusting padding or margins as necessary */
+    .feature-item, .contact {
+        text-align: center;
+    }
+}
