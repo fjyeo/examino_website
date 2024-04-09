@@ -2,7 +2,7 @@
     --background-color: #333333;
     --text-color: #CCCCCC;
     --accent-color: #7E5BEF;
-    --secondary-color: #2C3E50;
+    --secondary-color: #A483FF;
 }
 
 body, html {
@@ -75,8 +75,8 @@ header, section {
 }
 
 footer {
-    background-color: #0A192F;
-    color: #bbbbbb;
+    background-color: #2C3E50;
+    color: #999999;
     padding: 20px 0;
 }
 
@@ -88,12 +88,12 @@ footer {
 }
 
 .cta-button:hover, .sign-up input[type="submit"]:hover {
-    background-color: #009FDF; /* Darker shade on hover */
+    background-color: #FF5733; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly scale up */
 }
 
 .navigation li a:hover, .contact a:hover {
-    color: #4CAF50; /* Change link color on hover */
+    color: #FF5733; /* Change link color on hover */
     text-decoration: underline; /* Add underline */
 }
 
@@ -134,7 +134,7 @@ footer {
 
 .sign-up {
     background: linear-gradient(145deg, #0A192F, #172A45);
-    color: #fff;
+    color: #999999;
     padding: 50px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
