@@ -12,36 +12,37 @@
     <div class="logo">
         <img src="images/logo.png" alt="Examino Logo" /> <!-- Update src with your logo path -->
     </div>
-    <h3>Examino</h3>
 </header>
 <!-- The rest of your page content follows -->
-    
-<header class="hero">
-    <h1>Elevate Your Game with AI-Powered Analysis</h1>
-    <p>Unlock your full potential with next-gen athletics performance insights.</p>
-</header>
+
+<div class="landing-area">
+    <h1 class="glow">Examino</h1>
+    <p>Your journey to perfect technique starts here</p>
+    <div class="scroll-hint">&#x25BC;</div> <!-- Scroll hint icon -->
+</div>
 
 <section class="about">
     <h2>About Examino</h2>
     <p>Examino leverages cutting-edge AI to provide detailed performance analytics to athletes and coaches, enabling data-driven decisions that enhance training and competitive performance.</p>
 </section>
 
-<section class="features">
-    <h2>Features</h2>
-    <div class="feature-item">
-        <h3>Real-Time Analysis</h3>
-        <p>Get instant feedback on your technique with our AI-driven analysis tools.</p>
+<div class="features-section">
+    <div class="feature-card" id="feature1">
+        <h3>Real Time Analysis</h3>
+        <p>Get instant feedback on your tehcnique with AI Analysis</p>
     </div>
-    <div class="feature-item">
-        <h3>Adapted Training Plans</h3>
-        <p>Personalize your training with plans based to improve your technique</p>
+    <div class="feature-card" id="feature2">
+        <h3>Adapted Traing Plans</h3>
+        <p>Personalise your training plans to master your technique</p>
     </div>
     <!-- Add more features as needed -->
-</section>
+</div>
+
+
 
 <section class="how-it-works">
     <h2>How It Works</h2>
-    <p>Submit your videos and get detailed analytics and actionable insights to improve your performance.</p>
+    <p>Submit your videos and instantly get detailed analytics and actionable insights to improve your performance.</p>
     <!-- Implementation details or steps can go here -->
 </section>
 
@@ -62,5 +63,98 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+document.querySelector('.glow').addEventListener('mouseenter', () => {
+    document.querySelector('.glow').style.textShadow = '0 0 20px #00BFFF, 0 0 30px #00BFFF, 0 0 40px #00BFFF, 0 0 50px #00BFFF, 0 0 60px #00BFFF, 0 0 70px #00BFFF';
+});
+    
+document.querySelector('.glow').addEventListener('mouseleave', () => {
+    document.querySelector('.glow').style.textShadow = '0 0 10px #00BFFF, 0 0 20px #00BFFF, 0 0 30px #00BFFF, 0 0 40px #00BFFF, 0 0 50px #00BFFF, 0 0 60px #00BFFF';
+});
+</script>
+
+<script>
+window.addEventListener('scroll', function() {
+    var scrollHint = document.querySelector('.scroll-hint');
+    if (window.pageYOffset > 100) { // Adjust as necessary
+        scrollHint.style.display = 'none';
+    } else {
+        scrollHint.style.display = 'block';
+    }
+});
+</script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+  
+gsap.utils.toArray('.feature-card').forEach(card => {
+    gsap.from(card, {
+    duration: 1, // Animation duration
+    autoAlpha: 0, // Start from invisible
+    y: 50, // Start 50 pixels down from its final position
+    ease: 'none', // Type of easing. Visit https://greensock.com/ease-visualizer/ for more options
+    scrollTrigger: {
+        trigger: card,
+        start: "top 80%", // Start the animation when the top of the card hits the 80% vertical mark of the viewport
+        end: "top 60%", // End the animation when the top of the card hits the 60% vertical mark of the viewport
+        toggleActions: "play none none reset", // Defines what happens to the animation at start, end, and ScrollTrigger's lifecycle. "reset" makes the animation restartable on scroll back.
+        markers: false // Set to true if you want to see the start and end points during development
+    }
+    });
+});
+</script>
+  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+  
+gsap.utils.toArray('.feature').forEach(feature => {
+    gsap.fromTo(feature, 
+    { autoAlpha: 0, y: 50 }, 
+    {
+        duration: 1, 
+        autoAlpha: 1, 
+        y: 0,
+        scrollTrigger: {
+        trigger: feature,
+        start: "top 80%", // Animation starts when top of the feature hits 80% of the viewport
+        end: "bottom 20%", // Animation ends when bottom of the feature hits 20% of the viewport
+        toggleActions: "play none none reverse", // Defines how and when the animation plays or reverses
+        }
+    });
+});
+</script>
+
+<script>
+gsap.to(".hero-headline", {
+    duration: 1, 
+    opacity: 1, 
+    y: -20, 
+    ease: "power2.out", 
+    delay: 0.5
+});
+    
+gsap.to(".hero-subtext", {
+    duration: 1, 
+    opacity: 1, 
+    y: -20, 
+    ease: "power2.out", 
+    delay: 0.75
+});
+    
+gsap.to(".hero-cta", {
+    duration: 1, 
+    opacity: 1, 
+    y: -20, 
+    ease: "power2.out", 
+    delay: 1
+});
+</script>
+    
+  
 </body>
 </html>

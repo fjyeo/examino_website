@@ -35,7 +35,7 @@ body, html {
     }
 
     .logo img {
-        height: 40px; /* Slightly smaller logo for mobile devices */
+        height: 80px; /* Slightly smaller logo for mobile devices */
     }
 }
 
@@ -45,29 +45,133 @@ header, section {
     text-align: center;
 }
 
-.hero {
-    background-color: #0c0941;
-    padding: 100px 20px;
-}
-
-.features, .how-it-works {
+.landing-area {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    flex-direction: column; /* This ensures content stacks vertically */
+    height: 95vh;
+    text-align: center;
+    padding: 20px; /* To ensure text doesn't touch the edges */
+    background-color: #0d0d18; /* or any background color you prefer */
 }
 
-.feature-item {
-    width: calc(33% - 20px);
+
+/* Keep your previous .glow and animations styles */
+
+.glow {
+    font-size: 6rem; /* Big letters */
+    color: #ff8800; /* Your accent color */
+    text-shadow: 0 0 10px #8f530f, 0 0 20px #be6e11, 0 0 30px #4e2d06, 0 0 40px #ff8800, 0 0 50px #ff8800, 0 0 60px #ff8800;
+    animation: glowAnimation 2s infinite alternate;
+    position: relative;
+    top: -50px; /* Adjust as needed to move "Examino" up */
+}
+
+@keyframes glowAnimation {
+    from {
+        text-shadow: 0 0 10px #ff8800, 0 0 20px #ff8800, 0 0 30px #ff8800, 0 0 40px #ff8800;
+    }
+    to {
+        text-shadow: 0 0 20px #ff8800, 0 0 30px #ff8800, 0 0 40px #ff8800, 0 0 50px #ff8800, 0 0 60px #ff8800, 0 0 70px #ff8800;
+    }
+}
+
+/* Additional animation for the landing area content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-area h1, .landing-area p {
+    animation: fadeInUp 1s ease-out;
+}
+
+.landing-area p {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.scroll-hint {
+    color: #c0c0c0; /* or any color that matches your design */
+    font-size: 2rem; /* Adjust size as needed */
+    position: absolute;
+    bottom: 20px; /* Position at the bottom of the landing area */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    animation: bounce 2s infinite; /* Apply the bounce animation */
+    user-select: none; /* Prevent text selection */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+
+
+
+#features {
+    position: relative;
+}
+
+.feature {
+    opacity: 0; /* Start features as invisible for GSAP to animate */
+    margin: 50px 0; /* Add space between features */
+}
+
+.features-section {
+    display: flex;
+    flex-direction: column; /* Stacks child elements vertically */
+    justify-content: center; /* Centers items vertically; adjust as needed */
+    align-items: center; /* Centers items horizontally */
+    gap: 20px; /* Adjust the space between items */
+    padding: 40px 0; /* Padding around the entire section */
+}
+
+
+.feature-card {
+    width: calc(80%);
     background: #ff8800;
-    padding: 5px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.feature-item:hover {
+.feature-card:hover {
     transform: translateY(-10px);
 }
+
+.feature-card img {
+    max-width: 100px;
+}
+
+.feature-card h3 {
+    color: #333;
+}
+
+.feature-card p {
+    color: #161616;
+}
+
+
+
 
 .contact {
     background: var(--background-color);
@@ -76,7 +180,7 @@ header, section {
 
 footer {
     background-color: #161616;
-    color: #999999;
+    color: #575757;
     padding: 20px 0;
 }
 
@@ -133,8 +237,8 @@ footer {
 }
 
 .sign-up {
-    background: linear-gradient(145deg, #0A192F, #172A45);
-    color: #999999;
+    background: linear-gradient(145deg, #000307, #a05a19);
+    color: #ffffff;
     padding: 50px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
