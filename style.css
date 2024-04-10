@@ -1,7 +1,7 @@
 :root {
     --background-color: #111111;
-    --text-color: #CCCCCC;
-    --accent-color: #7E5BEF;
+    --text-color: #ffffff;
+    --accent-color: #ff8800;
     --secondary-color: #A483FF;
 }
 
@@ -75,7 +75,7 @@ header, section {
 }
 
 footer {
-    background-color: #2C3E50;
+    background-color: #161616;
     color: #999999;
     padding: 20px 0;
 }
@@ -170,7 +170,7 @@ footer {
 
 .sign-up input[type="submit"] {
     background-color: var(--secondary-color);
-    color: white;
+    color: #ff8800;
     border: none;
     cursor: pointer;
     padding: 10px 20px;
