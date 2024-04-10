@@ -1,5 +1,5 @@
 :root {
-    --background-color: #121212;
+    --background-color: #0d0d18;
     --text-color: #FFFFFF;
     --accent-color: #00BFFF;
     --secondary-color: #4CAF50;
@@ -15,7 +15,7 @@ body, html {
 }
 
 .site-header {
-    background-color: #0A192F; /* Deep blue, adjust according to your color scheme */
+    background-color: #0d0d18; /* Deep blue, adjust according to your color scheme */
     padding: 10px 20px; /* Adjust padding as needed */
     display: flex;
     justify-content: space-between;
@@ -46,7 +46,7 @@ header, section {
 }
 
 .hero {
-    background-color: #0A192F;
+    background-color: #0c0941;
     padding: 100px 20px;
 }
 
@@ -59,7 +59,7 @@ header, section {
 
 .feature-item {
     width: calc(33% - 20px);
-    background: #5c5c9b;
+    background: #ff8800;
     padding: 5px;
     border-radius: 10px;
     transition: transform 0.3s ease;
