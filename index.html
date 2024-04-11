@@ -17,7 +17,7 @@
 
 <div class="landing-area">
     <h1 class="glow">Examino</h1>
-    <div class="scroll-hint">&#x25BC;</div> <!-- Scroll hint icon -->
+    <div class="scroll-hint" id=""scrollHintArrow>&#x25BC;</div> <!-- Scroll hint icon -->
 </div>
 
 <section class="about">
@@ -31,7 +31,7 @@
         <p>Get instant feedback on your tehcnique with AI Analysis</p>
     </div>
     <div class="feature-card" id="feature2">
-        <h3>Adapted Traing Plans</h3>
+        <h3>Adapted Training Plans</h3>
         <p>Personalise your training plans to master your technique</p>
     </div>
     <!-- Add more features as needed -->
@@ -73,27 +73,6 @@ window.addEventListener('scroll', function() {
     }
 });
 </script>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-  
-gsap.utils.toArray('.feature-card').forEach(card => {
-    gsap.from(card, {
-    duration: 1, // Animation duration
-    autoAlpha: 0, // Start from invisible
-    y: 50, // Start 50 pixels down from its final position
-    ease: 'none', // Type of easing. Visit https://greensock.com/ease-visualizer/ for more options
-    scrollTrigger: {
-        trigger: card,
-        start: "top 80%", // Start the animation when the top of the card hits the 80% vertical mark of the viewport
-        end: "top 60%", // End the animation when the top of the card hits the 60% vertical mark of the viewport
-        toggleActions: "play none none reset", // Defines what happens to the animation at start, end, and ScrollTrigger's lifecycle. "reset" makes the animation restartable on scroll back.
-        markers: false // Set to true if you want to see the start and end points during development
-    }
-    });
-});
-</script>
-  
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
@@ -144,7 +123,34 @@ gsap.to(".hero-cta", {
     delay: 1
 });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0px)'; // Move to original position
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is in the viewport
+    });
     
+    document.querySelectorAll('.feature-card').forEach(card => {
+        observer.observe(card); // Observe each feature card
+    });
+});
+</script>
+    
+<script>
+document.getElementById('scrollHintArrow').addEventListener('click', function() {
+    document.getElementById('next-section').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+</script>
+       
   
 </body>
 </html>

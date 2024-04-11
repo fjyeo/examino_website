@@ -153,6 +153,9 @@ header, section {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    opacity: 0; /* Start with cards invisible */
+    transform: translateY(20px); /* Optional: start slightly down */
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .feature-card:hover {
