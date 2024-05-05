@@ -316,3 +316,26 @@ footer {
         text-align: center;
     }
 }
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--accent-color);
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-top: 2rem;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 1rem;
+}
