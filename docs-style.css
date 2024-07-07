@@ -1,0 +1,243 @@
+:root {
+    --background-color: #fffaed;
+    --text-color: #0f0e17;
+    --primary-colour: #ff8906;
+    --accent-color: #f2aa4c;
+    --secondary-color: #5b2885;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    background-color: var(--background-color);
+    border-bottom: 1px solid rgba(15, 14, 23, 0.1);
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.nav-link i {
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.docs-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 40px 5%;
+}
+
+.docs-sidebar {
+    width: 250px;
+    padding-right: 40px;
+}
+
+.docs-search {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.docs-search input {
+    width: 100%;
+    padding: 10px 30px 10px 10px;
+    border: 2px solid var(--primary-colour);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+}
+
+.docs-search i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-colour);
+}
+
+.docs-nav h3 {
+    margin-top: 30px;
+    color: var(--primary-colour);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.docs-nav ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.docs-nav ul li {
+    margin-bottom: 15px;
+}
+
+.docs-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.docs-nav ul li a:hover {
+    color: var(--primary-colour);
+}
+
+.docs-content {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.docs-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.docs-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-colour);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.docs-content p, .docs-content ol, .docs-content ul {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.info-box {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.info-box i {
+    color: var(--text-color);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.code-example {
+    background-color: var(--text-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.code-example h3 {
+    color: var(--background-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.docs-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.endpoint-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.endpoint-table th, .endpoint-table td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+}
+
+.endpoint-table th {
+    background-color: var(--primary-colour);
+    color: var(--background-color);
+    font-weight: bold;
+}
+
+.endpoint-table tr:nth-child(even) {
+    background-color: rgba(242, 170, 76, 0.1);
+}
+
+@media (max-width: 768px) {
+    .docs-container {
+        flex-direction: column;
+    }
+
+    .docs-sidebar {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .docs-content {
+        padding-left: 0;
+    }
+
+    .docs-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .docs-content h2 {
+        font-size: 2rem;
+    }
+}
