@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /favicon.ico
+
+Sitemap: https://www.examino.co.uk
