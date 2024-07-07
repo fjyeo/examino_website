@@ -1,32 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Dark mode toggle functionality
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    // Check for saved user preference
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-    // Set initial mode
-    if (isDarkMode) {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-
-    // Toggle dark mode
-    darkModeToggle.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-        
-        const isDarkModeNow = body.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDarkModeNow);
-
-        // Change icon
-        if (isDarkModeNow) {
-            this.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            this.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-    });
-
     // Scroll down button functionality
     const scrollIndicator = document.querySelector('.scroll-indicator');
     const whyExaminoSection = document.querySelector('.why-examino');
@@ -64,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(animation);
     }
 
+    
+
     // How does it work button smooth scroll
     const howItWorksBtn = document.querySelector('a[href="#how-it-works"]');
     const howItWorksSection = document.getElementById('how-it-works');
@@ -75,11 +49,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Add hover effect CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        .price-box {
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            padding-top: 40px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .price-box:hover, .price-box.featured:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .price-box.featured {
+            transform: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .popular-label {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-colour);
+            color: var(--background-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .popular-label i {
+            margin-right: 5px;
+        }
+        .box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .timeline-item, .testimonial-card {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .timeline-item.appear, .testimonial-card.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(style);
+
     // Intersection Observer for animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.3
+        threshold: 0.0
     };
 
     const observer = new IntersectionObserver((entries) => {
